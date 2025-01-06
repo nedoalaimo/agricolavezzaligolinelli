@@ -1,96 +1,165 @@
-$(document).ready(function() {
-    const header = $('.main-header');
-    
-    // Smooth scrolling for anchor links
-    $('a[href^="#"]').on('click', function(event) {
-        event.preventDefault();
+// Navigation configurations
+const navConfigs = {
+    home: `
+        <ul class="nav-links">
+            <li><a href="#azienda">AZIENDA</a></li>
+            <li><a href="#tour">TOUR ED EVENTI</a></li>
+            <li><a href="#prodotti">PRODOTTI</a></li>
+            <li><a href="#contatti">CONTATTI</a></li>
+        </ul>
+    `,
+    other: `
+        <ul class="nav-links">
+            <li><a href="index.html#azienda">AZIENDA</a></li>
+            <li><a href="tour_ed_eventi.html">TOUR ED EVENTI</a></li>
+            <li><a href="index.html#prodotti">PRODOTTI</a></li>
+            <li><a href="index.html#contatti">CONTATTI</a></li>
+        </ul>
+    `
+};
+
+// Load templates
+async function loadTemplate(templateName) {
+    try {
+        const response = await fetch(`templates/${templateName}.html`);
+        return await response.text();
+    } catch (error) {
+        console.error(`Error loading template ${templateName}:`, error);
+        return '';
+    }
+}
+
+async function loadTemplates() {
+    // Get header and footer content
+    const headerContent = await loadTemplate('header');
+    const footerContent = await loadTemplate('footer');
+
+    // Insert header and footer
+    $('#header-placeholder').html(headerContent);
+    $('#footer-placeholder').html(footerContent);
+
+    // Determine which navigation to use
+    const isHomePage = window.location.pathname.endsWith('index.html') || 
+                      window.location.pathname.endsWith('/');
+    const navContent = isHomePage ? navConfigs.home : navConfigs.other;
+
+    // Insert the appropriate navigation
+    $('#nav-placeholder').html(navContent);
+
+    // Initialize all functionality after templates are loaded
+    initializeAll();
+}
+
+function initializeAll() {
+    initializeMobileMenu();
+    initializeScrollEffects();
+}
+
+// Mobile menu functionality
+function initializeMobileMenu() {
+    const menuBtn = $('.menu-btn');
+    const navLinks = $('.nav-links');
+    const menuIcon = $('.menu-btn i');
+
+    // Function to close mobile menu
+    function closeMobileMenu() {
+        navLinks.removeClass('active');
+        menuIcon.removeClass('fa-times').addClass('fa-bars');
+        $('body').css('overflow', '');
+    }
+
+    // Toggle menu on button click
+    menuBtn.on('click', function() {
+        navLinks.toggleClass('active');
         
-        const target = $(this.getAttribute('href'));
-        if(target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top
-            }, 1000);
+        // Toggle menu icon
+        if (menuIcon.hasClass('fa-bars')) {
+            menuIcon.removeClass('fa-bars').addClass('fa-times');
+        } else {
+            menuIcon.removeClass('fa-times').addClass('fa-bars');
         }
+        
+        // Toggle body scroll
+        $('body').css('overflow', navLinks.hasClass('active') ? 'hidden' : '');
     });
 
-    // Add active class to navigation items and handle header color on scroll
-    $(window).scroll(function() {
-        let scrollDistance = $(window).scrollTop();
-        
-        // Handle header color change
-        if (scrollDistance > 50) {
+    // Close menu when clicking any navigation link
+    $('.nav-links a').on('click', function() {
+        closeMobileMenu();
+    });
+}
+
+// Initialize scroll effects and smooth scrolling
+function initializeScrollEffects() {
+    const header = $('.main-header');
+    const isHomePage = window.location.pathname.endsWith('index.html') || 
+                      window.location.pathname.endsWith('/');
+
+    // Smooth scrolling for anchor links on homepage using event delegation
+    if (isHomePage) {
+        $(document).on('click', '.nav-links a[href^="#"], .btn-scroll', function(e) {
+            e.preventDefault();
+            
+            const targetId = $(this).attr('href');
+            const target = $(targetId);
+            
+            if (target.length) {
+                const headerHeight = header.outerHeight();
+                const targetPosition = target.offset().top - headerHeight;
+                
+                $('html, body').stop().animate({
+                    scrollTop: targetPosition
+                }, {
+                    duration: 1000,
+                    easing: 'easeInOutQuad',
+                    complete: function() {
+                        // Update URL hash after animation completes
+                        if (history.pushState) {
+                            history.pushState(null, null, targetId);
+                        } else {
+                            location.hash = targetId;
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    // Add jQuery easing function if not exists
+    if (typeof $.easing.easeInOutQuad !== 'function') {
+        $.extend($.easing, {
+            easeInOutQuad: function (x, t, b, c, d) {
+                if ((t/=d/2) < 1) return c/2*t*t + b;
+                return -c/2 * ((--t)*(t-2) - 1) + b;
+            }
+        });
+    }
+
+    // Handle header color change on scroll
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 50) {
             header.addClass('scrolled');
         } else {
             header.removeClass('scrolled');
         }
-
-        // Handle active navigation items
-        $('.section').each(function(i) {
-            if ($(this).position().top <= scrollDistance + 100) {
-                $('.nav-links a.active').removeClass('active');
-                $('.nav-links a').eq(i).addClass('active');
-            }
-        });
-    }).scroll();
-
-    // Fade in sections on scroll
-    $(window).scroll(function() {
-        $('.section').each(function() {
-            const bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            const bottom_of_window = $(window).scrollTop() + $(window).height();
-            
-            if(bottom_of_window > bottom_of_object) {
-                $(this).animate({'opacity':'1'}, 500);
-            }
-        });
     });
-});
 
-// Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    const menuIcon = document.querySelector('.menu-btn i');
-
-    if (menuBtn && navLinks) {
-        menuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+    // Handle active navigation items
+    if (isHomePage) {
+        $(window).on('scroll', function() {
+            let scrollDistance = $(window).scrollTop();
             
-            // Toggle menu icon with transition
-            if (menuIcon.classList.contains('fa-bars')) {
-                menuIcon.classList.remove('fa-bars');
-                void menuIcon.offsetWidth; // Trigger reflow for smooth transition
-                menuIcon.classList.add('fa-times');
-            } else {
-                menuIcon.classList.remove('fa-times');
-                void menuIcon.offsetWidth; // Trigger reflow for smooth transition
-                menuIcon.classList.add('fa-bars');
-            }
-            
-            // Toggle body scroll
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Close menu when clicking a link
-        const navItems = navLinks.querySelectorAll('a');
-        navItems.forEach(item => {
-            item.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-                menuIcon.classList.remove('fa-times');
-                void menuIcon.offsetWidth; // Trigger reflow for smooth transition
-                menuIcon.classList.add('fa-bars');
-                document.body.style.overflow = '';
+            $('.section').each(function(i) {
+                if ($(this).position().top - header.outerHeight() <= scrollDistance) {
+                    $('.nav-links a.active').removeClass('active');
+                    $('.nav-links a').eq(i).addClass('active');
+                }
             });
         });
     }
-});
+}
 
-// Handle scroll events for header
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.main-header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
+// Initialize everything when DOM is ready
+$(document).ready(function() {
+    loadTemplates();
 });

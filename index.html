@@ -10,26 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="logo-container">
-            <a href="#" class="logo">
-                <img src="assets/images/logo.JPG" alt="Logo Agricola Vezzali Golinelli">
-            </a>
-        </div>
-        <nav>
-            <div class="menu-btn-container">
-                <button class="menu-btn" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#azienda">AZIENDA</a></li>
-                <li><a href="#tour">TOUR ED EVENTI</a></li>
-                <li><a href="#horeca">PRODOTTI</a></li>
-                <li><a href="#contatti">CONTATTI</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
         <section id="hero" class="hero">
@@ -58,7 +39,7 @@
             <div class="content">
                 <h2 class="section-title">Radici</h2>
                 <div class="section-grid reverse">
-                    <div class="section-image">
+                    <div class="section-image-full">
                         <img src="assets/images/albero_con_radici.png" alt="Albero con radici">
                     </div>
                     <div class="section-text">
@@ -79,55 +60,46 @@
                         <p>Con le nostre passeggiate tra i filari e le degustazioni, vivi esperienze uniche
                             immerse nela natura. E anche quando porti a casa i nostri prodotti freschi, continui
                             a creare momenti magici, gustandoli dove desideri e condividendoli con chi ami.</p>
-                        <a href="#" class="btn-primary">SCOPRI DI PIÙ</a>
+                        <a href="tour_ed_eventi.html" class="btn-primary">SCOPRI DI PIÙ</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="horeca" class="section">
+        <section id="prodotti" class="section">
             <div class="content">
                 <h2 class="section-title">Prodotti</h2>
                 <div class="products-grid">
                     <div class="product-card">
-                        <div class="product-image">
-                            <img src="assets/images/pic1.jpg" alt="Frutta e varietà">
-                        </div>
-                        <h3 class="product-title">Frutta e varietà</h3>
-                        <p class="product-description">Scopri le nostre ciliegie di Vignola IGP e altra frutta fresca, coltivata con passione e rispetto per la natura. Sapori autentici che raccontano la nostra terra.</p>
+                        <a href="./frutta.html" class="product-link">
+                            <div class="product-image">
+                                <img src="assets/images/pic1.jpg" alt="Frutta e varietà">
+                            </div>
+                            <h3 class="product-title">Frutta e varietà</h3>
+                            <p class="product-description">Scopri le nostre ciliegie di Vignola IGP e altra frutta fresca, coltivata con passione e rispetto per la natura. Sapori autentici che raccontano la nostra terra.</p>
+                        </a>
                     </div>
                     <div class="product-card">
-                        <div class="product-image">
-                            <img src="assets/images/pic2.jpg" alt="Composte e succhi">
-                        </div>
-                        <h3 class="product-title">Composte e succhi</h3>
-                        <p class="product-description">Assapora la dolcezza dei nostri frutti trasformati in deliziose composte e succhi artigianali. Preparati con cura per conservare tutto il gusto della frutta fresca.</p>
+                        <a href="./composte.html" class="product-link">
+                            <div class="product-image">
+                                <img src="assets/images/pic2.jpg" alt="Composte e succhi">
+                            </div>
+                            <h3 class="product-title">Composte e succhi</h3>
+                            <p class="product-description">Assapora la dolcezza dei nostri frutti trasformati in deliziose composte e succhi artigianali. Preparati con cura per conservare tutto il gusto della frutta fresca.</p>
+                        </a>
                     </div>
                     <div class="product-card">
-                        <div class="product-image">
-                            <img src="assets/images/pic3.jpg" alt="Dolci">
-                        </div>
-                        <h3 class="product-title">Dolci</h3>
-                        <p class="product-description">Lasciati tentare dai nostri dolci tradizionali, dove la frutta diventa protagonista di creazioni golose. Crostate e dessert che uniscono tradizione e innovazione.</p>
+                        <a href="./dolci.html" class="product-link">
+                            <div class="product-image">
+                                <img src="assets/images/pic3.jpg" alt="Dolci">
+                            </div>
+                            <h3 class="product-title">Dolci</h3>
+                            <p class="product-description">Lasciati tentare dai nostri dolci tradizionali, dove la frutta diventa protagonista di creazioni golose. Crostate e dessert che uniscono tradizione e innovazione.</p>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- <section id="curiosita" class="section">
-            <div class="content">
-                <h2 class="section-title">Curiosità</h2>
-                <div class="section-grid">
-                    <div class="section-image">
-                        <img src="assets/images/placeholder.jpg" alt="Curiosità">
-                    </div>
-                    <div class="section-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a href="#" class="btn-primary">SCOPRI DI PIÙ</a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
 
         <section id="contatti" class="section contact-section">
             <div class="map-overlay">
@@ -206,41 +178,7 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Informazioni Aziendali</h3>
-                <div class="business-info">
-                    <p>Azienda Agricola Vezzali Golinelli</p>
-                    <p>Sede Legale: Via Santo Stefano 158b</p>
-                    <p>40125 Bologna (BO)</p>
-                    <p>P.IVA: IT12345678901</p>
-                    <p>REA: BO-123456</p>
-                    <p>PEC: vezzaligolinelli@pec.it</p>
-                </div>
-            </div>
-            <div class="footer-section social-section">
-                <h3>Seguici sui social</h3>
-                <div class="social-links">
-                    <a href="https://instagram.com" class="social-link" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://facebook.com" class="social-link" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://youtube.com" class="social-link" target="_blank" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://linkedin.com" class="social-link" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2025 Azienda Agricola Vezzali Golinelli. Tutti i diritti riservati.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="js/script.js"></script>
 </body>
