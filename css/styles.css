@@ -19,44 +19,59 @@ body {
     width: 100%;
     background-color: #1B3B2D;
     z-index: 1000;
-    padding: 0.5rem 0;
     transition: all 0.3s ease;
+    height: 60px;
 }
 
 .main-header.scrolled {
     background: linear-gradient(to right, rgba(255, 255, 255, 1) 15%, rgba(255, 255, 255, 0.80) 100%);
 }
 
-.main-header.scrolled .logo {
-    background-color: white;
-    border-radius: 50%;
-    padding: 5px;
-    margin: -5px;
-}
-
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding: 0.5rem 5%;
+    padding: 0 5%;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+.logo-container {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    z-index: 1001;
+    transition: all 0.3s ease;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    position: relative;
+    margin-top: 20px;
     transition: all 0.3s ease;
 }
 
 .logo img {
-    height: 80px;
-    width: auto;
+    height: 160px;
+    width: 160px;
     object-fit: contain;
     border-radius: 50%;
     background-color: white;
-    padding: 5px;
+    padding: 10px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.main-header.scrolled .logo {
+    margin-top: 10px;
+}
+
+.main-header.scrolled .logo img {
+    height: 120px;
+    width: 120px;
 }
 
 .nav-links {
@@ -74,7 +89,7 @@ nav {
     transition: color 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .main-header.scrolled .nav-links a {
@@ -83,6 +98,36 @@ nav {
 
 .nav-links a:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo {
+        margin-top: 15px;
+    }
+
+    .logo img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .main-header.scrolled .logo img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    nav {
+        justify-content: center;
+    }
 }
 
 /* Hero Section */
@@ -96,7 +141,7 @@ nav {
     text-align: center;
     color: white;
     position: relative;
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 @font-face {
