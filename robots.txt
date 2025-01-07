@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /templates/
+Disallow: /assets/favicon/
+
+# Sitemap location
+Sitemap: https://www.agricolavezzaligolinelli.it/sitemap.xml
