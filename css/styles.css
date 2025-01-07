@@ -446,6 +446,11 @@ select.form-control {
     .section-text {
         text-align: center;
     }
+
+    .section-text p {
+        text-align: justify;
+        hyphens: auto;
+    }
 }
 
 /* Tour and Events Page Styles */
