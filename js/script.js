@@ -219,7 +219,7 @@ const cookieConsent = {
                 </div>
 
                 <div class="cookie-modal-footer">
-                    <a href="/privacy-policy.html" class="privacy-link">Privacy Policy</a>
+                    <a href="./privacy-policy.html" class="privacy-link">Privacy Policy</a>
                     <div class="cookie-buttons">
                         <button id="accept-all">Accetta Tutti</button>
                         <button id="save-preferences">Salva Preferenze</button>
