@@ -1291,3 +1291,18 @@ footer {
 .privacy-policy-content li {
     margin-bottom: 0.5rem;
 }
+
+/* Image styles */
+img[src*="mappa_bolo_pin.jpg"] {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+}

@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Composte e succhi - Agricola Vezzali Golinelli</title>
+    <title>Composte, Succhi e Dolci Artigianali | Ciliegie di Vignola IGP e Moretta Slow Food</title>
+    <meta name="description" content="Scopri le nostre composte e succhi artigianali di Ciliegie di Vignola IGP e Moretta Slow Food, insieme ai dolci tradizionali. Prodotti naturali senza conservanti, preparati con frutta fresca di stagione.">
+    <meta name="keywords" content="composte artigianali, succhi di frutta naturali, composta ciliegie Vignola IGP, Moretta Slow Food, dolci tradizionali, crostata ciliegie, pinza, raviole, prodotti artigianali Modena">
+    <meta property="og:title" content="Composte, Succhi e Dolci Artigianali | Agricola Vezzali Golinelli">
+    <meta property="og:description" content="Composte e succhi artigianali di Ciliegie di Vignola IGP e Moretta Slow Food, dolci tradizionali preparati con frutta fresca di stagione. Prodotti 100% naturali senza conservanti.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,21 +21,22 @@
     <main>
         <section class="product-detail-section">
             <div class="content">
-                <h1 class="section-title">Composte e succhi</h1>
+                <h1 class="section-title">Composte e Succhi</h1>
                 <div class="product-detail-grid">
                     <div class="product-detail-image">
-                        <img src="assets/images/pic2.jpg" alt="Composte e succhi">
+                        <img src="assets/images/pic2.jpg" alt="Composte e succhi artigianali">
                     </div>
                     <div class="product-detail-info">
-                        <p>Le nostre composte e succhi sono preparati artigianalmente utilizzando solo frutta fresca di stagione proveniente dai nostri frutteti. Ogni barattolo racchiude il sapore autentico della frutta appena raccolta.</p>
+                        <p>Le nostre composte e succhi sono preparati utilizzando solo frutta fresca di stagione proveniente dai nostri frutteti. Ogni barattolo racchiude il sapore autentico della frutta appena raccolta.</p>
                         <p>La nostra selezione include:</p>
                         <ul>
                             <li>Composta di ciliegie di Vignola IGP</li>
-                            <li>Succo naturale di ciliegia 100%</li>
-                            <li>Composte di frutta mista</li>
-                            <li>Succhi di frutta di stagione</li>
+                            <li>Composta di ciliegie moretta (Presidio Slow Food)</li>
+                            <li>Succo di ciliegia moretta (Presidio Slow Food)</li>
+                            <li>Composte di frutta (fragola, albicocca, pesca, susine)</li>
+                            <li>Succhi di frutta di stagione (albicocca, pesca, pera)</li>
                         </ul>
-                        <p>Tutti i nostri prodotti sono realizzati senza conservanti artificiali e con un ridotto contenuto di zuccheri, per preservare il gusto naturale della frutta.</p>
+                        <p>Tutti i nostri prodotti sono realizzati senza conservanti artificiali, con un ridotto contenuto di zuccheri aggiunti o solo zuccheri della frutta, per preservare il gusto naturale della frutta.</p>
                     </div>
                 </div>
             </div>
@@ -37,6 +44,38 @@
     </main>
 
     <div id="footer-placeholder"></div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Composte e Succhi Artigianali",
+      "description": "Composte e succhi artigianali di Ciliegie di Vignola IGP e Moretta Slow Food, preparati con frutta fresca di stagione senza conservanti artificiali.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Agricola Vezzali Golinelli"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "EUR",
+        "itemOffered": [
+          {
+            "@type": "Product",
+            "name": "Composta di ciliegie di Vignola IGP"
+          },
+          {
+            "@type": "Product",
+            "name": "Composta di ciliegie moretta (Presidio Slow Food)"
+          },
+          {
+            "@type": "Product",
+            "name": "Succo di ciliegia moretta (Presidio Slow Food)"
+          }
+        ]
+      }
+    }
+    </script>
 
     <script src="js/script.js"></script>
 </body>

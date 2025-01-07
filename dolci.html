@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dolci - Agricola Vezzali Golinelli</title>
+    <title>Dolci Artigianali della Tradizione | Crostate e Dolci con Ciliegie di Vignola</title>
+    <meta name="description" content="Scopri i nostri dolci artigianali: crostate, pinze e raviole con marmellata di ciliegie, preparati seguendo ricette tradizionali con ingredienti freschi e naturali.">
+    <meta name="keywords" content="dolci artigianali, crostata ciliegie, pinza, raviole, dolci tradizionali Modena, dolci con ciliegie Vignola">
+    <meta property="og:title" content="Dolci Artigianali della Tradizione | Agricola Vezzali Golinelli">
+    <meta property="og:description" content="Dolci artigianali preparati con ricette tradizionali: crostate, pinze e raviole con marmellata di ciliegie di Vignola.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,21 +21,22 @@
     <main>
         <section class="product-detail-section">
             <div class="content">
-                <h1 class="section-title">Dolci</h1>
+                <h1 class="section-title">Dolci Tradizionali</h1>
                 <div class="product-detail-grid">
                     <div class="product-detail-image">
-                        <img src="assets/images/pic3.jpg" alt="Dolci">
+                        <img src="assets/images/pic3.jpg" alt="Dolci tradizionali con ciliegie">
                     </div>
                     <div class="product-detail-info">
-                        <p>I nostri dolci artigianali sono preparati seguendo ricette tradizionali, utilizzando ingredienti freschi e naturali, con particolare attenzione alla nostra frutta di stagione.</p>
-                        <p>La nostra pasticceria include:</p>
+                        <p>Benvenuti nel nostro mondo di dolci tradizionali, dove ogni creazione racconta una storia di passione e autenticità. I nostri dolci artigianali sono veri gioielli della tradizione modenese, preparati con maestria seguendo ricette tramandate nel tempo. Utilizziamo solo ingredienti selezionati e naturali, dando particolare risalto alla nostra pregiata marmellata di ciliegie, che conferisce ad ogni dolce un sapore unico e indimenticabile.</p>
+                        
+                        <p>La nostra proposta celebra i classici della pasticceria locale:</p>
                         <ul>
-                            <li>Crostata di ciliegie fresche</li>
-                            <li>Torta della nonna con frutta di stagione</li>
-                            <li>Biscotti artigianali</li>
-                            <li>Dolci speciali per eventi e ricorrenze</li>
+                            <li><strong>Crostata con marmellata di ciliegie</strong> - Un'armonia perfetta tra la friabilità della pasta frolla fatta a mano e la dolcezza delle nostre ciliegie</li>
+                            <li><strong>Pinza con marmellata di ciliegie</strong> - Un dolce rustico della tradizione, dove la morbidezza dell'impasto si sposa con il gusto intenso della nostra marmellata</li>
+                            <li><strong>Raviole con marmellata di ciliegie</strong> - Piccoli scrigni di pasta ripieni della nostra preziosa marmellata, un classico intramontabile della pasticceria modenese</li>
                         </ul>
-                        <p>Ogni dolce è preparato con cura e passione, utilizzando metodi tradizionali per garantire sapori autentici e genuini.</p>
+                        
+                        <p>Ogni dolce è un piccolo capolavoro artigianale che unisce la semplicità degli ingredienti genuini alla ricchezza dei sapori della nostra terra. La nostra marmellata di ciliegie, protagonista di queste creazioni, è preparata con la stessa cura e passione che mettiamo nella coltivazione dei nostri frutti, donando ai dolci un gusto autentico e inconfondibile.</p>
                     </div>
                 </div>
             </div>
@@ -37,6 +44,38 @@
     </main>
 
     <div id="footer-placeholder"></div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Dolci Artigianali Tradizionali",
+      "description": "Dolci artigianali preparati con ricette tradizionali: crostate, pinze e raviole con marmellata di ciliegie di Vignola.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Agricola Vezzali Golinelli"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "EUR",
+        "itemOffered": [
+          {
+            "@type": "Product",
+            "name": "Crostata con marmellata di ciliegie"
+          },
+          {
+            "@type": "Product",
+            "name": "Pinza con marmellata di ciliegie"
+          },
+          {
+            "@type": "Product",
+            "name": "Raviole con marmellata di ciliegie"
+          }
+        ]
+      }
+    }
+    </script>
 
     <script src="js/script.js"></script>
 </body>
