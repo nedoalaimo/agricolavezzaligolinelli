@@ -1401,3 +1401,76 @@ img[src*="mappa_bolo_pin.jpg"] {
     color: #666;
     font-size: 1.1rem;
 }
+
+/* Curiosita Section Styles */
+.curiosita-section {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+    margin: 2rem 0;
+}
+
+.curiosita-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    text-align: center;
+}
+
+.curiosita-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #1B3B2D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -50px auto 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.curiosita-icon i {
+    color: white;
+    font-size: 24px;
+}
+
+.curiosita-container h2 {
+    color: #1B3B2D;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.curiosita-container p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.curiosita-container p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .curiosita-section {
+        padding: 3rem 1rem;
+        margin: 1rem 0;
+    }
+
+    .curiosita-container {
+        padding: 1.5rem;
+    }
+
+    .curiosita-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .curiosita-container p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
