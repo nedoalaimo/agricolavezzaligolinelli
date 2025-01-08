@@ -1,23 +1,172 @@
 <footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <div class="business-info">
-                <p>Agricola Vezzali Golinelli</p>
-                <p>Via ca de barozzi 26, 41058 Vignola (MO)</p>
-                <p>Tel: +39 334 2797698 </p>
-                <p>Email: info@agricolavezzaligolinelli.it</p>
-                <p>P.IVA: IT04109140360</p>
+    <div class="container">
+        <div class="footer-columns">
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h3>Azienda Agricola</h3>
+                <div class="content">
+                    <p>Via Santuario della Pieve</p>
+                    <p>41058, Vignola (MO)</p>
+                    <p class="small">P.IVA: IT04109140360</p>
+                </div>
             </div>
-        </div>
-        <div class="footer-section social-section">
-            <h3 class="social-title">Seguici sui social</h3>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+
+            <!-- Column 2 -->
+            <div class="footer-column">
+                <h3>Punto Vendita</h3>
+                <div class="content">
+                    <p>La Bottega della Ciliegia</p>
+                    <p>Via Santo Stefano 158B</p>
+                    <p>40152, Bologna</p>
+                    
+                </div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h3>Contatti</h3>
+                <div class="content">
+                    <div class="contact">
+                        <p><strong>Laura Golinelli</strong></p>
+                        <p><a href="mailto:Laura@agricolavezzaligolinelli.it">Laura@agricolavezzaligolinelli.it</a></p>
+                        <p>+39 334 279698</p>
+                    </div>
+                    <div class="contact">
+                        <p><strong>Primo Vezzali</strong></p>
+                        <p><a href="mailto:Primo@agricolavezzaligolinelli.it">Primo@agricolavezzaligolinelli.it</a></p>
+                        <p>+39 348 371714</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copyright">© 2024 Agricola Vezzali Golinelli. Tutti i diritti riservati.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 Agricola Vezzali Golinelli. Tutti i diritti riservati.</p>
+            
         </div>
     </div>
 </footer>
+
+<style>
+footer {
+    background: #333;
+    color: white;
+    padding: 50px 0 30px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.footer-column {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.footer-column h3 {
+    margin-bottom: 25px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 180px;
+}
+
+.footer-column p {
+    margin: 8px 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.small {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+.contact {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.contact:last-child {
+    margin-bottom: 0;
+}
+
+.contact strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-links a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffd700;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #ffd700;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .content {
+        min-height: auto;
+    }
+
+    .footer-column {
+        padding: 0;
+    }
+
+    .contact {
+        margin-bottom: 30px;
+    }
+}
+</style>

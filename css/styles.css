@@ -446,11 +446,6 @@ select.form-control {
     .section-text {
         text-align: center;
     }
-
-    .section-text p {
-        text-align: justify;
-        hyphens: auto;
-    }
 }
 
 /* Tour and Events Page Styles */
@@ -780,17 +775,23 @@ select.form-control {
 .store-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
     gap: 2rem;
-    padding: 0 1.5rem;
 }
 
 .store-description {
-    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .store-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60vh;
     border-left: 2px solid #1B3B2D;
-    padding-left: 2rem;
+    padding: 2rem;
 }
 
 .contact-info {
@@ -814,14 +815,12 @@ select.form-control {
     
     .store-content {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        text-align: center;
     }
     
     .store-location {
         border-left: none;
-        border-top: 2px solid #1B3B2D;
-        padding-left: 0;
-        padding-top: 1.5rem;
+        padding: 1.5rem 1rem;
     }
     
     .store-description {
@@ -1332,4 +1331,14 @@ img[src*="mappa_bolo_pin.jpg"] {
     left: 50%;
     right: 50%;
     transform: translateX(-50%);
+}
+
+/* Contact Form Styles */
+.contact-intro {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+    line-height: 1.6;
+    color: #666;
+    font-size: 1.1rem;
 }
