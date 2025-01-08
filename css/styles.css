@@ -1283,6 +1283,65 @@ footer {
     transform: scale(1.1);
 }
 
+/* Cookie Consent Mobile Optimization */
+.cc-window {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+@media (max-width: 768px) {
+    .cc-window {
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        padding: 1rem !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        max-height: 100vh !important;
+        overflow-y: auto !important;
+    }
+
+    .cc-message {
+        margin-bottom: 0.5rem !important;
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .cc-compliance {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+    }
+
+    .cc-btn {
+        margin: 0 !important;
+        padding: 0.6rem 1rem !important;
+        font-size: 0.9rem !important;
+        flex: 1 !important;
+        max-width: 150px !important;
+        text-align: center !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .cc-window {
+        background-color: #333 !important;
+        color: #fff !important;
+    }
+
+    .cc-btn {
+        background-color: #1B3B2D !important;
+        color: #fff !important;
+        border: 1px solid #fff !important;
+    }
+
+    .cc-btn.cc-allow {
+        background-color: #1B3B2D !important;
+    }
+}
+
 /* Privacy Policy Page Styles */
 .privacy-policy-content {
     max-width: 800px;
