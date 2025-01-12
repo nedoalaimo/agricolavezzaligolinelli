@@ -724,6 +724,14 @@ select.form-control {
     max-height: 800px;
 }
 
+.map-iframe {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+}
+
 .contact-card {
     background: rgba(255, 255, 255, 0.75);
     padding: 3rem;
@@ -796,7 +804,7 @@ select.form-control {
 
 .contact-info {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     line-height: 1.6;
 }
 
@@ -990,7 +998,7 @@ select.form-control {
 .map-container {
     position: relative;
     width: 100%;
-    height: 470px;
+    height: 250px;
 }
 
 .map-container iframe {
@@ -1004,7 +1012,7 @@ select.form-control {
 
 @media (max-width: 768px) {
     .map-container {
-        height: 470px;
+        height: 200px;
     }
 }
 
